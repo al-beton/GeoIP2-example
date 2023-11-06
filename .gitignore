@@ -169,3 +169,6 @@ cython_debug/
 
 # ignore the folder data
 /data
+
+# ignore geoip2 data to avoid large file upload to github
+/geoip2-data
