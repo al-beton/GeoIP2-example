@@ -7,7 +7,7 @@ import os
 zipped_data_folder = 'zipped_data'
 
 for file in os.listdir('zipped_data'):
-    print(f'Handling {file}...')
+    print(f'Handling archive {file}...')
     if file.endswith('.zip'):
         os.system(f'unzip -n {zipped_data_folder}/{file} -d data')
     elif file.endswith('.tar.gz'):
@@ -20,9 +20,9 @@ for folder in os.listdir('data'):
     if not os.path.isdir(f'data/{folder}'):
         continue
 
-    print(f'Handling {folder}...')
+    print(f'Handling folder {folder}...')
     for file in os.listdir(f'data/{folder}'):
-        print(f'Handling {file}...')
+        print(f'Handling copy {file}...')
         if file.endswith('.mmdb'):
             os.system(f'cp data/{folder}/{file} geoip2')
 
