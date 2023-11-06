@@ -1,14 +1,17 @@
 # Here is the demo example of the usage of the package.
 
-# First we unzip the .zip and .tar.gz files in zipped_data to the data folder.
-
 import os
 
+# First we unzip the .zip and .tar.gz files in zipped_data to the data folder.
+
+zipped_data_folder = 'zipped_data'
+
 for file in os.listdir('zipped_data'):
+    print(f'Handling {file}...')
     if file.endswith('.zip'):
-        os.system('unzip zipped_data/' + file + ' -d data')
+        os.system(f'unzip -n {zipped_data_folder}/{file} -d data')
     elif file.endswith('.tar.gz'):
-        os.system('tar -xzf zipped_data/' + file + ' -C data')
+        os.system(f'tar -k -xzf {zipped_data_folder}/{file} -C data')
 
 
 
