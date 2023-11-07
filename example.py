@@ -26,3 +26,11 @@ for folder in os.listdir('data'):
         if file.endswith('.mmdb'):
             os.system(f'cp data/{folder}/{file} geoip2')
 
+
+# Now we want to use the GeoIP2 package to try some stuff out
+
+import geoip2.database
+
+with geoip2.database.Reader('data/GeoLite2-ASN_20231103/GeoLite2-ASN.mmdb') as reader:
+    response = reader.asn('123.123.123.123')
+    print(f'{response.autonomous_system_organization} ({response.autonomous_system_number})')
