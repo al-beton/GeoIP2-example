@@ -172,3 +172,6 @@ cython_debug/
 
 # ignore geoip2 data to avoid large file upload to github
 /geoip2-data
+/geoip2/GeoLite2-ASN.mmdb
+/geoip2/GeoLite2-City.mmdb
+/geoip2/GeoLite2-Country.mmdb
