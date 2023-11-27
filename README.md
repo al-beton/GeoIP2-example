@@ -11,3 +11,9 @@ See: [MaxMinds](https://dev.maxmind.com/geoip/geolite2-free-geolocation-data)
 You should create an API key and download their latest dataset.
 
 In this version the MaxMinds data from 06/11/2023 is included.
+
+New data can be put in the Zipped data folder.
+
+### Execution
+
+Run example.py
