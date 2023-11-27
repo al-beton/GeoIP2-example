@@ -16,4 +16,8 @@ New data can be put in the Zipped data folder.
 
 ### Execution
 
-Run example.py
+Run example.py.
+
+### Dependencies
+
+This uses the unzip and tar CLI tools which you must have installed.
