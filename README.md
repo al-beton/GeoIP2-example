@@ -12,11 +12,11 @@ You should create an API key and download their latest dataset.
 
 In this GitHub repository, the MaxMinds data from 06/11/2023 is included.
 
-New data can be put in the Zipped data folder.
-
 ### Execution
 
-Run example.py.
+Ensure that up to date MaxMinds data is placed in the zipped_data folder
+
+Run example.py
 
 A successful run will output the following response to the query of the IP address 123.123.123.123
 
