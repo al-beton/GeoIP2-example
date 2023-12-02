@@ -26,11 +26,30 @@ for folder in os.listdir('data'):
         if file.endswith('.mmdb'):
             os.system(f'cp data/{folder}/{file} geoip2')
 
-
 # Now we want to use the GeoIP2 package to try some stuff out
 
 import geoip2.database
 
+test_ip = '123.123.123.13'
+
+with geoip2.database.Reader('data/GeoLite2-City_20231103/GeoLite2-City.mmdb') as reader:
+    response = reader.city(test_ip)
+    city = response.city.name
+
+with geoip2.database.Reader('data/GeoLite2-Country_20231103/GeoLite2-Country.mmdb') as reader:
+    response = reader.country(test_ip)
+    country = response.country.name
+
 with geoip2.database.Reader('data/GeoLite2-ASN_20231103/GeoLite2-ASN.mmdb') as reader:
-    response = reader.asn('123.123.123.123')
-    print(f'{response.autonomous_system_organization} ({response.autonomous_system_number})')
+    response = reader.asn(test_ip)
+    asn_name = response.autonomous_system_organization
+    asn = response.autonomous_system_number
+
+print(f'Queried IP: {test_ip}')
+print(f'{city}, {country}')
+print(f'{response.autonomous_system_organization} ({response.autonomous_system_number})')
+
+# If successful, this should print:
+# Queried IP: 123.123.123.13
+# Beijing, China
+# China Unicom Beijing Province Network (4808)
