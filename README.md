@@ -18,6 +18,14 @@ New data can be put in the Zipped data folder.
 
 Run example.py.
 
+A successful run will output the following response to the query of the IP address 123.123.123.123
+
+``` Beijing, China ```
+
+``` China Unicom Beijing Province Network (4808) ``` 
+
+
+
 ### Dependencies
 
 This uses the unzip and tar CLI tools which you must have installed.
